@@ -1,15 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Loehr</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { color: #333; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: left;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .social-links a:hover {
+            background-color: #0056b3;
+        }
+        
+        .social-links a.github {
+            background-color: #0000FF;
+        }
+        
+        .social-links a.github:hover {
+            background-color: #555;
+        }
+        
+        .social-links a.linkedin {
+            background-color: #00008B;
+        }
+        
+        .social-links a.resume {
+            background-color: #0000CD;
+        }
+        
+        .social-links a.resume:hover {
+            background-color: #1e7e34;
+        }
+        
+        .social-links a.blog {
+            background-color: #0000EE;
+        }
+        
+        .social-links a.blog:hover {
+            background-color: #5a32a3;
+        }
+        
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .project {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .project h3 {
+            margin-bottom: 10px;
+        }
+        
+        .project h3 a {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        
+        .project h3 a:hover {
+            text-decoration: underline;
+        }
+        
+        .project-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .tech-stack {
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <h1>Hello Baer!</h1>
-    <p>This is my first GitHub Pages site.</p>
-    <p>I love you!</p>
+    <div class="container">
+        <header>
+            <img src="https://via.placeholder.com/150" alt="Your Photo" class="profile-photo">
+            <div class="header-content">
+                <h1>Andrea Loehr</h1>
+                <p class="subtitle">Astrophysics, Oncology, AI Safety</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/andrea-loehr-76737810" class="linkedin">LinkedIn</a>
+                    <a href="./resume.pdf" class="resume" target="_blank">Resume</a>
+                    <a href="./blog/projects" class="blog">Blog</a>
+                    <a href="https://github.com/anloehr" class="github">GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p>I spent many years as an astrophysicist, but became increasingly motivated by the desire to have a more 
+                direct impact on humanity. After a career transition into biology, I have found great fulfillment in the 
+                development of targeted oncology therapies. </p>
+            
+            <p>However, at this point in history I am feeling a passionate sense 
+                of urgency to contribute to the field of AI safety and keeping its development beneficial for humanity. </p>
+            
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3><a href="./blog/Project1">Exploring Gaps in Model Safety Evaluation: Red-Teaming the SALAD-Bench Benchmark for Large Language Models</a></h3>
+                <p>Here, we explore limitations in current large language model (LLM) safety evaluation frameworks and examine 
+                    how prompt style can affect the safety classification of LLM outputs. We use the SALAD-Bench and 
+                    its MD-Judge evaluator to classify ChatGPT3.5-turbo responses to over 21,000 harmful prompts across 
+                    6 major harm categories into safe or unsafe responses using one simple directive and one Chain-of-Thought prompt.
+                    The simple directive and CoT prompts resulted in 7% and 16% unsafe responses, respectively. Analyzing individual
+                    responses, we identified large-scale patterns of false safe classification. This misclassification gives a false sense 
+                    of security and can potentially further unsafe LLM behavior when future models are trained to meet benchmarking goals.</p>
+                <p><a href="https://github.com/anloehr/SALADBench.MDJudge.Pipeline" class="project-link">View on GitHub</a></p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
+
+

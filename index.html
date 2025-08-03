@@ -172,7 +172,35 @@
             border-radius: 4px;
             font-size: 0.9em;
         }
+
+/* Make everything mobile-friendly */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 10px;  /* less padding */
+  }
+
+  header {
+    flex-direction: column;  /* stack image above text */
+    text-align: center;      /* center text for narrow screens */
+  }
+
+  .profile-photo {
+    width: 100%;       /* take full width */
+    height: auto;      /* maintain aspect ratio */
+    border-radius: 0;  /* no circle crop */
+    max-width: 300px;  /* don't go too big */
+  }
+
+  .header-content {
+    text-align: center;
+  }
+
+  section {
+    padding: 20px;
+  }
+}  
     </style>
+
 </head>
 <body>
     <div class="container">

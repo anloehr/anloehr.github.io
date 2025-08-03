@@ -35,35 +35,18 @@
       text-decoration: underline;
     }
 
-    /* PDF Wrapper and scaling */
-    .pdf-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
+    /* Desktop PDF */
     .resume-container {
       width: 90%;
       max-width: 1000px;
-      height: 90vh; /* Use 90% of the viewport height */
+      height: 90vh;
       border: none;
     }
 
-    /* Responsive tweaks for small screens */
+    /* Hide embedded PDF on mobile */
     @media (max-width: 768px) {
-      h1 {
-        width: 95%;
-      }
-
-      .back-link {
-        margin-left: 5%;
-      }
-
       .resume-container {
-        width: 100%;
-        transform: scale(0.65);
-        transform-origin: top left;
-        height: 150vh; /* Increase height to preserve page */
+        display: none;
       }
     }
   </style>
@@ -72,17 +55,21 @@
   <a href="./index.html" class="back-link">&larr; Back to Home</a>
   <h1>Andrea Loehr - Resume</h1>
 
-  <!-- Force Download Link -->
-  <p>
-    <a href="./resume.pdf" download="Andrea_Loehr_Resume.pdf">
-      📄 Download Resume
+  <!-- Desktop PDF -->
+  <iframe src="./resume.pdf" class="resume-container"></iframe>
+
+  <!-- Mobile download prompt -->
+  <p id="mobile-download" style="display:none;">
+    📄 <a href="./resume.pdf" download="Andrea_Loehr_Resume.pdf">
+      Tap here to view or download the resume
     </a>
   </p>
 
-  <!-- Scaled Embedded PDF -->
-  <div class="pdf-wrapper">
-    <iframe src="./resume.pdf" class="resume-container"></iframe>
-  </div>
+  <script>
+    // Detect mobile and show download link
+    if (window.innerWidth < 768) {
+      document.getElementById('mobile-download').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
-

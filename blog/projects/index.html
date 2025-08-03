@@ -3,30 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Andrea Loehr</title>
+  <title>Projects</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
-      color: #333;
-      text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
-    a {
-      display: block;
-      margin: 20px;
-      font-size: 1.5em;
-      color: #007bff;
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .project-list li {
+      margin-bottom: 15px;
+    }
+
+    .project-link {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: white;
       text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .project-link:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Projects</h1>  
-  <a href="Salad/">Red-Teaming the SALAD-Bench</a>
+  <h1>Projects</h1>
+  <ul class="project-list">
+    <li>
+      <a href="./Salad/" class="project-link">
+        Exploring Gaps in Model Safety Evaluation: Red-Teaming the SALAD-Bench Benchmark for Large Language Models
+      </a>
+    </li>
+    <!-- Future projects can be added like this:
+    <li>
+      <a href="./AnotherProject/" class="project-link">Another Project Title</a>
+    </li>
+    -->
+  </ul>
 </body>
 </html>
-

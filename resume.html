@@ -41,6 +41,8 @@
       max-width: 1000px;
       height: 90vh;
       border: none;
+      transform: scale(1); /* ensures full width */
+      transform-origin: top left;
     }
 
     /* Hide embedded PDF on mobile */
@@ -49,6 +51,21 @@
         display: none;
       }
     }
+
+    /* Mobile prompt */
+    #mobile-download {
+      display: none;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+    #mobile-download a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #mobile-download a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -56,17 +73,15 @@
   <h1>Andrea Loehr - Resume</h1>
 
   <!-- Desktop PDF -->
-  <iframe src="./resume.pdf" class="resume-container"></iframe>
+  <iframe src="./resume.pdf#zoom=FitH" class="resume-container"></iframe>
 
   <!-- Mobile download prompt -->
-  <p id="mobile-download" style="display:none;">
-    📄 <a href="./resume.pdf" download="Andrea_Loehr_Resume.pdf">
-      Tap here to view or download the resume
-    </a>
+  <p id="mobile-download">
+    📄 <a href="./resume.pdf" target="_blank">Tap here to view or download the resume</a>
   </p>
 
   <script>
-    // Detect mobile and show download link
+    // Show mobile prompt automatically
     if (window.innerWidth < 768) {
       document.getElementById('mobile-download').style.display = 'block';
     }

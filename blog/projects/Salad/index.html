@@ -10,19 +10,71 @@
       margin: 0;
       padding: 20px;
       text-align: center;
+      background-color: #f8f9fa;
     }
-    embed {
-      width: 80%;
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    /* Desktop PDF */
+    .pdf-container {
+      width: 90%;
+      max-width: 1000px;
       height: 90vh;
-      border: 1px solid #ccc;
+      border: none;
+    }
+
+    /* Hide PDF embed on mobile */
+    @media (max-width: 768px) {
+      .pdf-container {
+        display: none;
+      }
+    }
+
+    /* Mobile download link */
+    #mobile-download {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #mobile-download a {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    #mobile-download a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
- <iframe src="./RedTeaming.SALAD.pdf" width="100%" height="800px" style="border:none;">
-    This browser does not support PDFs. Please download the PDF to view it:
-    <a href="./RedTeaming.SALAD.pdf">Download PDF</a>
-  </iframe>
+  <h1>Red-Teaming the SALAD-Bench</h1>
+
+  <!-- Desktop Embedded PDF -->
+  <iframe src="./RedTeaming.SALAD.pdf" class="pdf-container"></iframe>
+
+  <!-- Mobile Link -->
+  <p id="mobile-download">
+    📄 <a id="salad-pdf-link" href="./RedTeaming.SALAD.pdf" target="_blank">
+      Tap here to view or download the paper
+    </a>
   </p>
+
+  <script>
+    const saladLink = document.getElementById('salad-pdf-link');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Show the mobile link
+      document.getElementById('mobile-download').style.display = 'block';
+    }
+  </script>
 </body>
 </html>

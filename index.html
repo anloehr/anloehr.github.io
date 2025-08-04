@@ -5,45 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Loehr</title>
     <style>
-        /* Your existing CSS (unchanged) */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { margin-bottom: 50px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 30px; }
-        .profile-photo { width: 150px; height: 150px; object-fit: cover; flex-shrink: 0; }
-        .header-content { flex: 1; }
-        h1 { font-size: 2.5em; margin-bottom: 10px; color: #2c3e50; text-align: left; }
-        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; text-align: left; }
-        .social-links { display: flex; gap: 10px; margin-top: 15px; }
-        .social-links a { display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s; font-size: 0.9em; }
-        .social-links a:hover { background-color: #0056b3; }
-        .social-links a.github { background-color: #0000FF; }
-        .social-links a.github:hover { background-color: #555; }
-        .social-links a.linkedin { background-color: #00008B; }
-        .social-links a.resume { background-color: #0000CD; }
-        .social-links a.resume:hover { background-color: #1e7e34; }
-        .social-links a.blog { background-color: #0000EE; }
-        .social-links a.blog:hover { background-color: #5a32a3; }
-        section { background: white; margin: 30px 0; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { font-size: 2em; margin-bottom: 20px; color: #2c3e50; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
-        .project { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        .project:last-child { border-bottom: none; margin-bottom: 0; }
-        .project h3 { margin-bottom: 10px; }
-        .project h3 a { color: #2c3e50; text-decoration: underline; }
-        .project h3 a:hover { text-decoration: underline; }
-        .project-link { color: #007bff; text-decoration: none; font-weight: bold; }
-        .project-link:hover { text-decoration: underline; }
-        .tech-stack { margin-top: 10px; }
-        .tech-tag { display: inline-block; background-color: #e9ecef; color: #495057; padding: 4px 8px; margin: 2px; border-radius: 4px; font-size: 0.9em; }
-
-        /* Mobile styles */
-        @media (max-width: 600px) {
-            .container { padding: 20px 10px; }
-            header { flex-direction: column; text-align: center; }
-            .profile-photo { width: 100%; height: auto; border-radius: 0; max-width: 300px; }
-            .header-content { text-align: center; }
-            section { padding: 20px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: left;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .social-links a:hover {
+            background-color: #0056b3;
+        }
+        
+        .social-links a.github {
+            background-color: #0000FF;
+        }
+        
+        .social-links a.github:hover {
+            background-color: #555;
+        }
+        
+        .social-links a.linkedin {
+            background-color: #00008B;
+        }
+        
+        .social-links a.resume {
+            background-color: #0000CD;
+        }
+        
+        .social-links a.resume:hover {
+            background-color: #1e7e34;
+        }
+        
+        .social-links a.blog {
+            background-color: #0000EE;
+        }
+        
+        .social-links a.blog:hover {
+            background-color: #5a32a3;
+        }
+        
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .project {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .project h3 {
+            margin-bottom: 10px;
+        }
+        
+        .project h3 a {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        
+        .project h3 a:hover {
+            text-decoration: underline;
+        }
+        
+        .project-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .tech-stack {
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Mobile-friendly */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 100%;
+                height: auto;
+                border-radius: 0;
+                max-width: 300px;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }  
     </style>
 </head>
 <body>
@@ -66,9 +222,9 @@
             <h2>About Me</h2>
             <p>After spending many years as an astrophysicist, I became increasingly motivated by the desire to have a more 
                 direct impact on humanity. After a career transition into biology, I have found great fulfillment in the 
-                development of targeted oncology therapies and diagnostic tests.</p>
+                development of targeted oncology therapies and diagnostic tests. </p><br>
             <p>However, at this point in history I am feeling a passionate sense 
-                of urgency to contribute to the field of AI safety and keeping its development beneficial for humanity.</p>
+                of urgency to contribute to the field of AI safety and keeping its development beneficial for humanity. </p><br>
             <p>I am open to new opportunities and collaborations. Feel free to reach out!</p>
         </section>
 
@@ -78,22 +234,28 @@
                 <h3><a href="./blog/projects/Salad/">
                     Exploring Gaps in Model Safety Evaluation: Red-Teaming the SALAD-Bench Benchmark for Large Language Models</a></h3>
                 <p>Here, we explore limitations in current large language model (LLM) safety evaluation frameworks and examine 
-                    how prompt style can affect the safety classification of LLM outputs...</p>
+                    how prompt style can affect the safety classification of LLM outputs. We use the SALAD-Bench and 
+                    its MD-Judge evaluator to classify ChatGPT3.5-turbo responses to over 21,000 harmful prompts across 
+                    6 major harm categories into safe or unsafe responses using one simple directive and one Chain-of-Thought prompt.
+                    The simple directive and CoT prompts resulted in 7% and 16% unsafe responses, respectively. Analyzing individual
+                    responses, we identified large-scale patterns of false safe classification. This misclassification gives a false sense 
+                    of security and can potentially further unsafe LLM behavior when future models are trained to meet benchmarking goals.</p>
                 <p><a href="https://github.com/anloehr/SALADBench.MDJudge.Pipeline" class="project-link">View on GitHub</a></p>
             </div>
         </section>
     </div>
 
     <script>
-      const resumeLink = document.getElementById('resume-link');
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const resumeLink = document.getElementById('resume-link');
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      if (isMobile) {
-        resumeLink.setAttribute('download', 'Andrea_Loehr_Resume.pdf');
-      } else {
+        // Always open PDF in a new tab
         resumeLink.setAttribute('target', '_blank');
-      }
+
+        // On desktop, optionally trigger a download
+        if (!isMobile) {
+            resumeLink.setAttribute('download', 'Andrea_Loehr_Resume.pdf');
+        }
     </script>
 </body>
 </html>
-

@@ -15,16 +15,22 @@
       color: #2c3e50;
       margin-bottom: 20px;
     }
-    .project-link {
-      display: block;
+    .project-list {
+      list-style: none;
+      padding: 0;
+    }
+    .project-list li {
       margin-bottom: 15px;
-      font-size: 1.4em;
+    }
+    .project-link {
+      font-size: 1.3em; /* Slightly bigger */
       color: #007bff;
       text-decoration: none;
     }
     .project-link:hover {
       text-decoration: underline;
     }
+    /* Back link styling */
     .back-link {
       display: inline-block;
       margin-bottom: 20px;
@@ -40,6 +46,13 @@
 <body>
   <a href="../" class="back-link">&larr; Back</a>
   <h1>AI Projects</h1>
-  <a href="./salad/" class="project-link">SALAD - Red-Teaming LLM Safety Evaluation</a>
+  <ul class="project-list">
+    <li>
+      <!-- Link directly to the PDF and open in new tab -->
+      <a href="./salad/RedTeaming.SALAD.pdf" class="project-link" target="_blank" type="application/pdf">
+        Exploring Gaps in Model Safety Evaluation: Red-Teaming the SALAD-Bench Benchmark for Large Language Models
+      </a>
+    </li>
+  </ul>
 </body>
 </html>

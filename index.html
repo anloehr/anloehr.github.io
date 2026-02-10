@@ -137,6 +137,11 @@
             border-bottom: 3px solid #007bff;
             padding-bottom: 10px;
         }
+
+        /* Adds a bit of space right under the AI Safety Projects headline */
+        .section-intro-space {
+            margin-top: 10px;
+        }
         
         .project {
             margin-bottom: 30px;
@@ -220,7 +225,7 @@
             <img src="MyPhoto.png" alt="Andrea Loehr" class="profile-photo">
             <div class="header-content">
                 <h1>Andrea Loehr</h1>
-                <p class="subtitle">Astrophysics, Oncology, AI Safety</p>
+                <p class="subtitle">AI Safety Researcher</p>
                 <div class="social-links">
                     <a href="./ai-projects/" class="blog">AI Safety Projects</a>
                     <a href="./resume.pdf" id="resume-link" class="resume">Resume</a>
@@ -233,6 +238,31 @@
 
         <section>
             <h2>AI Safety Projects</h2>
+
+            <div class="section-intro-space"></div>
+
+            <div class="project">
+                <h3>Apart Fellowship</h3>
+                <p>
+                    Genomic Foundation Models are anticipated to move towards deployment in areas such as genomic regulatory
+                    element identification, functional assessment of genomic variants, anticancer therapies (e.g. CAR T-cell
+                    therapy), and synthetic DNA biosecurity screening, creating an attack surface where fragile internal
+                    representations can be exploited by minimal, biologically plausible changes. In our Apart Fellowship
+                    project we set out to expand our <a href="https://www.lesswrong.com/posts/3zh4nnjoxDsknQYLw/enhancing-genomic-foundation-model-robustness-through" target="_blank" rel="noopener noreferrer">foundational work</a>
+                    and 1) probe and improve Genomic Foundation Model robustness by extending promoter classification benchmarks
+                    with adversarial attacks; 2) experimentally validate in vitro whether these adversarial perturbations disrupt
+                    genuine biological function or instead expose model fragility; 3) restore model reliability by implementing
+                    Iterative Black-Box Adversarial Training as a defense.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>AI Safety Camp</h3>
+                <p>
+                    Collaborator with the <a href="https://meaningstack.foundation/pages/homepage" target="_blank" rel="noopener noreferrer">Meaningstack Foundation</a>
+                </p>
+            </div>
+
             <div class="project">
                 <h3><a href="/ai-projects/salad/RedTeaming.SALAD.pdf" target="_blank" type="application/pdf">
                     Exploring Gaps in Model Safety Evaluation: Findings from Red-Teaming the SALAD-Bench Benchmark for Large Language Models</a></h3>
@@ -274,8 +304,6 @@
 
         // Always open PDF in a new tab
         resumeLink.setAttribute('target', '_blank');
-
-       
     </script>
 </body>
 </html>
